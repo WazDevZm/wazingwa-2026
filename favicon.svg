@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#grad)"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#27272a" stroke-width="1.5"/>
+  <!-- Terminal // in vibrant orange -->
+  <line x1="16" y1="44" x2="25" y2="20" stroke="url(#orangeGrad)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="27" y1="44" x2="36" y2="20" stroke="url(#orangeGrad)" stroke-width="4" stroke-linecap="round"/>
+  <!-- Geometric node / eye aperture -->
+  <circle cx="46" cy="26" r="4" fill="#fafafa"/>
+  <path d="M 40 38 C 42 34, 50 34, 52 38" fill="none" stroke="#71717a" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="46" cy="44" r="2.5" fill="url(#orangeGrad)"/>
+</svg>
