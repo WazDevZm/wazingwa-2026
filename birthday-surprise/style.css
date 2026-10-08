@@ -74,9 +74,9 @@ body {
 }
 
 .photo-container {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 30px;
+  width: 280px;
+  height: 280px;
+  margin: 40px auto 30px;
   position: relative;
   animation: photoFloat 3s ease-in-out infinite;
 }
@@ -507,8 +507,9 @@ body {
   }
 
   .photo-container {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
+    margin: 30px auto 25px;
   }
 
   .birthday-title {
@@ -604,8 +605,9 @@ body {
 
 @media (max-width: 480px) {
   .photo-container {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
+    margin: 25px auto 20px;
   }
 
   .birthday-title {
