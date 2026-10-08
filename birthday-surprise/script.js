@@ -1,6 +1,9 @@
 // Confetti Animation System
 const confettiContainer = document.getElementById('confetti');
 const celebrateBtn = document.getElementById('celebrateBtn');
+const surpriseBtn1 = document.getElementById('surpriseBtn1');
+const surpriseBtn2 = document.getElementById('surpriseBtn2');
+const surpriseBtn3 = document.getElementById('surpriseBtn3');
 
 const confettiColors = [
   '#ff69b4', // Hot pink
@@ -201,5 +204,145 @@ document.addEventListener('keydown', (e) => {
   if (e.code === 'Space' && !e.repeat) {
     e.preventDefault();
     celebrateBtn.click();
+  }
+});
+
+// Surprise Button 1: Send Love (Heart burst)
+surpriseBtn1.addEventListener('click', (e) => {
+  const rect = surpriseBtn1.getBoundingClientRect();
+  const x = rect.left + rect.width / 2;
+  const y = rect.top + rect.height / 2;
+  
+  // Create heart burst
+  for (let i = 0; i < 30; i++) {
+    const heart = document.createElement('div');
+    heart.innerHTML = ['💖', '💗', '💕', '💝'][Math.floor(Math.random() * 4)];
+    heart.style.position = 'fixed';
+    heart.style.left = x + 'px';
+    heart.style.top = y + 'px';
+    heart.style.fontSize = '30px';
+    heart.style.pointerEvents = 'none';
+    heart.style.zIndex = '1002';
+    
+    const angle = (Math.PI * 2 * i) / 30;
+    const velocity = Math.random() * 150 + 100;
+    const tx = Math.cos(angle) * velocity;
+    const ty = Math.sin(angle) * velocity;
+    
+    document.body.appendChild(heart);
+    
+    heart.animate([
+      { transform: 'translate(0, 0) scale(0)', opacity: 1 },
+      { transform: `translate(${tx}px, ${ty}px) scale(1.5)`, opacity: 0 }
+    ], {
+      duration: 1200,
+      easing: 'cubic-bezier(0, 0.5, 0.5, 1)'
+    });
+    
+    setTimeout(() => heart.remove(), 1200);
+  }
+});
+
+// Surprise Button 2: Magic Sparkles
+surpriseBtn2.addEventListener('click', (e) => {
+  const rect = surpriseBtn2.getBoundingClientRect();
+  const x = rect.left + rect.width / 2;
+  const y = rect.top + rect.height / 2;
+  
+  // Create sparkle explosion
+  for (let i = 0; i < 40; i++) {
+    const sparkle = document.createElement('div');
+    sparkle.innerHTML = '✨';
+    sparkle.style.position = 'fixed';
+    sparkle.style.left = x + 'px';
+    sparkle.style.top = y + 'px';
+    sparkle.style.fontSize = (Math.random() * 20 + 20) + 'px';
+    sparkle.style.pointerEvents = 'none';
+    sparkle.style.zIndex = '1002';
+    
+    const angle = (Math.PI * 2 * i) / 40;
+    const velocity = Math.random() * 200 + 150;
+    const tx = Math.cos(angle) * velocity;
+    const ty = Math.sin(angle) * velocity;
+    
+    document.body.appendChild(sparkle);
+    
+    sparkle.animate([
+      { transform: 'translate(0, 0) scale(0) rotate(0deg)', opacity: 1 },
+      { transform: `translate(${tx}px, ${ty}px) scale(1) rotate(360deg)`, opacity: 0 }
+    ], {
+      duration: 1000,
+      easing: 'cubic-bezier(0, 0.5, 0.5, 1)'
+    });
+    
+    setTimeout(() => sparkle.remove(), 1000);
+  }
+  
+  // Add extra sparkles around screen
+  for (let i = 0; i < 20; i++) {
+    setTimeout(() => {
+      const randomSparkle = document.createElement('div');
+      randomSparkle.innerHTML = '✨';
+      randomSparkle.style.position = 'fixed';
+      randomSparkle.style.left = Math.random() * 100 + 'vw';
+      randomSparkle.style.top = Math.random() * 100 + 'vh';
+      randomSparkle.style.fontSize = '25px';
+      randomSparkle.style.pointerEvents = 'none';
+      randomSparkle.style.zIndex = '1002';
+      
+      document.body.appendChild(randomSparkle);
+      
+      randomSparkle.animate([
+        { transform: 'scale(0) rotate(0deg)', opacity: 1 },
+        { transform: 'scale(2) rotate(180deg)', opacity: 0 }
+      ], {
+        duration: 800,
+        easing: 'ease-out'
+      });
+      
+      setTimeout(() => randomSparkle.remove(), 800);
+    }, i * 50);
+  }
+});
+
+// Surprise Button 3: Flower Rain
+surpriseBtn3.addEventListener('click', (e) => {
+  const flowers = ['🌸', '🌺', '🌹', '🌷', '💐', '🌻'];
+  
+  // Create flower rain from top
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => {
+      const flower = document.createElement('div');
+      flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.position = 'fixed';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.top = '-50px';
+      flower.style.fontSize = (Math.random() * 15 + 25) + 'px';
+      flower.style.pointerEvents = 'none';
+      flower.style.zIndex = '1002';
+      flower.style.opacity = '0.9';
+      
+      document.body.appendChild(flower);
+      
+      flower.animate([
+        { transform: 'translateY(0) rotate(0deg)', opacity: 0.9 },
+        { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+      ], {
+        duration: Math.random() * 2000 + 3000,
+        easing: 'ease-out'
+      });
+      
+      setTimeout(() => flower.remove(), 5000);
+    }, i * 30);
+  }
+});
+
+// Touch support for surprise buttons
+[surpriseBtn1, surpriseBtn2, surpriseBtn3].forEach(btn => {
+  if (btn) {
+    btn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      btn.click();
+    });
   }
 });
