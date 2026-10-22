@@ -211,96 +211,17 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Preview Window Loading State Management
-document.querySelectorAll('.preview-iframe').forEach((iframe) => {
-  const spinner = iframe.closest('.preview-viewport-wrap')?.querySelector('.preview-loading-spinner');
-  
-  function hideSpinner() {
-    if (spinner) spinner.classList.add('is-hidden');
-  }
-
-  iframe.addEventListener('load', hideSpinner);
-  // Fallback timeout in case cross-origin load event is delayed
-  setTimeout(hideSpinner, 3500);
-});
-
-// Copy Site Link Buttons
-document.querySelectorAll('.btn-copy-link').forEach((btn) => {
-  btn.addEventListener('click', async (e) => {
-    e.stopPropagation();
-    const url = btn.getAttribute('data-copy');
-    if (!url) return;
-
-    btn.classList.add('is-pressed');
-    setTimeout(() => btn.classList.remove('is-pressed'), 200);
-
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(url);
-      } else {
-        const tempInput = document.createElement('textarea');
-        tempInput.value = url;
-        tempInput.style.position = 'fixed';
-        tempInput.style.left = '-999999px';
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-      }
-      showToast(`Copied ${url} to clipboard!`);
-    } catch (err) {
-      showToast(`Link: ${url}`);
-    }
+// Experience "Show all" toggle
+const expList = document.getElementById('expList');
+const expToggle = document.getElementById('expToggle');
+if (expList && expToggle) {
+  const collapsedLabel = expToggle.innerHTML;
+  expToggle.addEventListener('click', () => {
+    const expanded = expList.classList.toggle('is-expanded');
+    expToggle.setAttribute('aria-expanded', String(expanded));
+    expToggle.innerHTML = expanded ? 'Show less <span aria-hidden="true">↑</span>' : collapsedLabel;
   });
-});
-
-// Reload Preview Frame
-document.querySelectorAll('.btn-reload-frame').forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const card = btn.closest('.project-showcase-card');
-    if (!card) return;
-
-    const iframe = card.querySelector('.preview-iframe');
-    const spinner = card.querySelector('.preview-loading-spinner');
-
-    if (iframe) {
-      if (spinner) spinner.classList.remove('is-hidden');
-      const currentSrc = iframe.src;
-      iframe.src = 'about:blank';
-      setTimeout(() => {
-        iframe.src = currentSrc;
-      }, 50);
-      showToast('Reloading preview...');
-    }
-  });
-});
-
-// Interactive Mode Toggle (Allows mouse interaction inside preview snippet)
-document.querySelectorAll('.btn-toggle-interact').forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const card = btn.closest('.project-showcase-card');
-    if (!card) return;
-
-    const iframe = card.querySelector('.preview-iframe');
-    if (!iframe) return;
-
-    const isInteractive = iframe.classList.toggle('interactive');
-    btn.classList.toggle('is-active', isInteractive);
-
-    const span = btn.querySelector('span');
-    if (span) {
-      span.textContent = isInteractive ? '🔒 Lock' : '⚡ Interact';
-    }
-
-    if (isInteractive) {
-      showToast('Interactive mode: scroll & click inside preview enabled');
-    } else {
-      showToast('Preview locked to page scroll');
-    }
-  });
-});
+}
 
 // Coming Soon Project Triggers
 document.querySelectorAll('.btn-coming-soon-trigger').forEach((btn) => {
@@ -377,7 +298,7 @@ function closePreviewModal() {
 }
 
 // Modal open triggers
-document.querySelectorAll('.btn-expand-modal, .btn-dot-expand').forEach((btn) => {
+document.querySelectorAll('.btn-expand-modal').forEach((btn) => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
     const projectName = btn.getAttribute('data-project') || btn.getAttribute('data-target') || 'Project';
