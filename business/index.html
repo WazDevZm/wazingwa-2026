@@ -64,7 +64,7 @@
 
         <div class="stats reveal">
           <div><strong data-count="7">0</strong><span>days to launch</span></div>
-          <div><strong data-count="2000" data-prefix="K">0</strong><span>starting price</span></div>
+          <div><strong data-count="2000" data-prefix="K" data-zmw="2000">K0</strong><span>starting price</span></div>
           <div><strong data-count="95" data-suffix="+">0</strong><span>Lighthouse score</span></div>
           <div><strong data-count="100" data-suffix="%">0</strong><span>mobile‑first</span></div>
         </div>
@@ -330,10 +330,10 @@
           <p class="muted">We looked at what Zambians actually pay today. Agencies in Lusaka quote $5,000+ minimums, while cheap freelancers deliver $200 sites that break. We sit in the middle: agency quality, local price.</p>
         </div>
         <div class="bars">
-          <div class="bar-row"><span>Budget freelancer</span><div class="bar"><i style="--w:4%"></i></div><b>~K4,000</b></div>
-          <div class="bar-row"><span>SA agency (5–9 pages)</span><div class="bar"><i style="--w:6.2%"></i></div><b>~K6,200</b></div>
-          <div class="bar-row hl"><span>Kalulu Business</span><div class="bar"><i style="--w:9.5%"></i></div><b>K9,500</b></div>
-          <div class="bar-row"><span>Lusaka agency minimum</span><div class="bar"><i style="--w:100%"></i></div><b>K100,000+</b></div>
+          <div class="bar-row"><span>Budget freelancer</span><div class="bar"><i style="--w:4%"></i></div><b data-zmw="4000" data-pre="~">~K4,000</b></div>
+          <div class="bar-row"><span>SA agency (5–9 pages)</span><div class="bar"><i style="--w:6.2%"></i></div><b data-zmw="6200" data-pre="~">~K6,200</b></div>
+          <div class="bar-row hl"><span>Kalulu Business</span><div class="bar"><i style="--w:9.5%"></i></div><b data-zmw="9500">K9,500</b></div>
+          <div class="bar-row"><span>Lusaka agency minimum</span><div class="bar"><i style="--w:100%"></i></div><b data-zmw="100000" data-post="+">K100,000+</b></div>
         </div>
         <p class="fine">Reference rate ≈ K20.2 / USD (Nov 2026). Competitor figures are publicly listed prices or budgets, converted to Kwacha.</p>
       </div>
@@ -386,7 +386,7 @@
         <details class="reveal"><summary>How do I pay?</summary><p>Airtel Money, MTN MoMo, Zamtel Kwacha or bank transfer. 50% deposit to start, 50% when you're happy and we launch.</p></details>
         <details class="reveal"><summary>What do I need to give you?</summary><p>Your logo (or we'll make a simple one), photos, and a short description of what you do. We help write the rest.</p></details>
         <details class="reveal"><summary>Can I update the site myself?</summary><p>On the Care plan we make edits for you within 48 hours. Self‑editing is coming with Kalulu Sites in 2027.</p></details>
-        <details class="reveal"><summary>What happens after the first year?</summary><p>Hosting renews at K450/month on the Care plan, or you can move the site anywhere you like — it's yours.</p></details>
+        <details class="reveal"><summary>What happens after the first year?</summary><p>Hosting renews at <span data-zmw="450">K450</span>/month on the Care plan, or you can move the site anywhere you like — it's yours.</p></details>
       </div>
     </section>
 
@@ -432,6 +432,10 @@
     <a href="#top" class="brand"><img src="logo.svg" alt="" width="28" height="28" /><span>kalulu<b>.</b></span></a>
     <p class="muted">Made in Zambia 🇿🇲 by <a href="/">Wazingwa Mugala</a> · © <span id="year"></span></p>
   </footer>
+
+  <button class="currency-fab" id="currencyFab" type="button" aria-pressed="false" aria-label="Toggle prices between Kwacha and US dollars">
+    <b class="cur-k">K</b><b class="cur-d">$</b><span>Show in USD</span>
+  </button>
 
   <script src="script.js"></script>
 </body>

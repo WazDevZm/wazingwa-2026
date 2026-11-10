@@ -124,23 +124,34 @@
     fit();
   }));
 
-  // Currency toggle
+  // Currency: Kwacha by default; the pricing toggle and floating button both switch every price
   const toggle = document.querySelector('.currency-toggle');
-  const formatPrice = (zmw, cur) => cur === 'usd'
-    ? '$' + Math.round(zmw / USD_RATE).toLocaleString('en-US')
-    : 'K' + zmw.toLocaleString('en-US');
-  toggle.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
-    const cur = btn.dataset.cur;
-    toggle.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+  const fab = document.getElementById('currencyFab');
+  let currency = 'zmw';
+  const formatPrice = (el, cur) => {
+    const zmw = +el.dataset.zmw;
+    const amount = cur === 'usd'
+      ? '$' + Math.round(zmw / USD_RATE).toLocaleString('en-US')
+      : 'K' + zmw.toLocaleString('en-US');
+    return (el.dataset.pre || '') + amount + (el.dataset.post || '');
+  };
+  const setCurrency = cur => {
+    currency = cur;
+    toggle.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.cur === cur));
     toggle.classList.toggle('usd', cur === 'usd');
+    fab.classList.toggle('usd', cur === 'usd');
+    fab.querySelector('span').textContent = cur === 'usd' ? 'Show in Kwacha' : 'Show in USD';
+    fab.setAttribute('aria-pressed', cur === 'usd');
     document.querySelectorAll('[data-zmw]').forEach(el => {
       el.classList.add('swap');
       setTimeout(() => {
-        el.textContent = formatPrice(+el.dataset.zmw, cur);
+        el.textContent = formatPrice(el, cur);
         el.classList.remove('swap');
       }, 180);
     });
-  }));
+  };
+  toggle.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => setCurrency(btn.dataset.cur)));
+  fab.addEventListener('click', () => setCurrency(currency === 'usd' ? 'zmw' : 'usd'));
 
   // "Choose X" buttons preselect the plan in the contact form
   const planSelect = document.getElementById('cPlan');
