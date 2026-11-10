@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Natasha Banda — Photography | Zambezi template by Kalulu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f3ede3; --ink:#1b1712; --rust:#b4532a; --muted:#7a6f62; }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,sans-serif; }
+  a { color:inherit; text-decoration:none; }
+  nav { display:flex; justify-content:space-between; padding:28px 6vw; font-size:14px; letter-spacing:.08em; text-transform:uppercase; }
+  nav div { display:flex; gap:32px; } nav a:hover { color:var(--rust); }
+  header { padding:6vh 6vw 4vh; }
+  h1 { font-family:Fraunces,serif; font-weight:300; font-size:clamp(64px,12vw,180px); line-height:.9; margin:0; letter-spacing:-.04em; animation:up 1.2s cubic-bezier(.22,1,.36,1) both; }
+  h1 em { color:var(--rust); }
+  .intro { display:flex; justify-content:space-between; align-items:end; gap:40px; margin-top:40px; flex-wrap:wrap; }
+  .intro p { max-width:420px; font-size:18px; line-height:1.6; color:var(--muted); margin:0; }
+  .btn { display:inline-block; padding:16px 28px; border:1px solid var(--ink); border-radius:999px; transition:.3s; }
+  .btn:hover { background:var(--ink); color:var(--bg); }
+  .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; padding:4vh 6vw; }
+  .ph { border-radius:4px; position:relative; overflow:hidden; min-height:280px; transition:transform .6s cubic-bezier(.22,1,.36,1); }
+  .ph:hover { transform:scale(.98); }
+  .ph span { position:absolute; left:16px; bottom:14px; color:#fff; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+  .p1 { grid-column:span 7; min-height:520px; background:linear-gradient(160deg,#d98b4f,#6b2f17 70%,#2a140a); }
+  .p2 { grid-column:span 5; background:linear-gradient(200deg,#8aa39b,#2f4a44); }
+  .p3 { grid-column:span 4; background:linear-gradient(140deg,#e7c49a,#a0643a); }
+  .p4 { grid-column:span 4; background:linear-gradient(180deg,#3b3a36,#141310); }
+  .p5 { grid-column:span 4; background:linear-gradient(120deg,#c7795a,#5a2a1b); }
+  .p2 { margin-top:120px; }
+  section.about { display:grid; grid-template-columns:1fr 1fr; gap:6vw; padding:12vh 6vw; border-top:1px solid #d8cfc1; margin-top:8vh; }
+  .about h2 { font-family:Fraunces,serif; font-weight:300; font-size:56px; margin:0; line-height:1; }
+  .about p { font-size:18px; line-height:1.7; color:var(--muted); }
+  .clients { display:flex; gap:40px; flex-wrap:wrap; font-family:Fraunces,serif; font-style:italic; font-size:24px; color:var(--muted); }
+  footer { padding:10vh 6vw; background:var(--ink); color:var(--bg); }
+  footer h2 { font-family:Fraunces,serif; font-weight:300; font-size:clamp(48px,8vw,120px); margin:0 0 24px; line-height:.95; }
+  footer a { color:#e9a27d; border-bottom:1px solid; }
+  @keyframes up { from { opacity:0; transform:translateY(40px); } }
+  @media (max-width:760px){ .grid>* { grid-column:span 12 !important; margin:0 !important; } section.about { grid-template-columns:1fr; } nav div { display:none; } }
+</style>
+</head>
+<body>
+  <nav><a href="#">Natasha Banda</a><div><a href="#">Work</a><a href="#">About</a><a href="#">Contact</a></div></nav>
+  <header>
+    <h1>Light, land<br>&amp; <em>people.</em></h1>
+    <div class="intro">
+      <p>Documentary &amp; wedding photographer based in Livingstone, Zambia. Telling stories from the Zambezi to the Copperbelt since 2018.</p>
+      <a class="btn" href="#">Book a shoot →</a>
+    </div>
+  </header>
+  <div class="grid">
+    <div class="ph p1"><span>Victoria Falls, 2026</span></div>
+    <div class="ph p2"><span>Kafue Flats</span></div>
+    <div class="ph p3"><span>Wedding · Lusaka</span></div>
+    <div class="ph p4"><span>Portraits</span></div>
+    <div class="ph p5"><span>Kuomboka Ceremony</span></div>
+  </div>
+  <section class="about">
+    <h2>Every frame<br>is a story.</h2>
+    <div>
+      <p>I've shot for lodges, NGOs and over 60 couples. My work has appeared in travel magazines across Southern Africa.</p>
+      <div class="clients"><span>Safari Co.</span><span>ZamTravel</span><span>Lodge 27</span></div>
+    </div>
+  </section>
+  <footer>
+    <h2>Let's make<br>something real.</h2>
+    <a href="#">hello@natashabanda.zm</a>
+  </footer>
+</body>
+</html>

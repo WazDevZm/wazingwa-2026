@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mutale Chileshe — Software Engineer | Terminal template by Kalulu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0a0e0a; --g:#39ff88; --dim:#4f7a5f; --txt:#c9f5d8; --amber:#ffcf5c; }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--txt); font-family:"IBM Plex Mono",monospace; font-size:16px; line-height:1.7; }
+  body::after { content:""; position:fixed; inset:0; pointer-events:none; background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px); }
+  a { color:var(--g); }
+  .wrap { max-width:900px; margin:0 auto; padding:60px 32px; }
+  .bar { display:flex; justify-content:space-between; color:var(--dim); font-size:13px; border-bottom:1px dashed #1e3326; padding-bottom:14px; }
+  .p::before { content:"mutale@lusaka:~$ "; color:var(--g); }
+  h1 { font-size:clamp(40px,7vw,72px); line-height:1.05; margin:48px 0 16px; color:#fff; text-shadow:0 0 24px rgba(57,255,136,.35); }
+  .cursor { display:inline-block; width:.55em; height:1em; background:var(--g); vertical-align:-.1em; animation:blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity:0; } }
+  .role { color:var(--amber); }
+  section { margin-top:56px; }
+  h2 { font-size:14px; color:var(--dim); font-weight:400; text-transform:uppercase; letter-spacing:.15em; }
+  .proj { border:1px solid #1e3326; padding:20px 22px; margin:12px 0; transition:.25s; }
+  .proj:hover { border-color:var(--g); box-shadow:0 0 0 1px var(--g), 0 0 30px rgba(57,255,136,.15); transform:translateX(6px); }
+  .proj b { color:#fff; } .proj small { color:var(--dim); display:block; }
+  .stack { display:flex; flex-wrap:wrap; gap:8px; } .stack span { border:1px solid #1e3326; padding:2px 10px; font-size:13px; }
+  pre { color:var(--dim); margin:0; font-size:13px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bar"><span>~/mutale-chileshe</span><span>● online · Lusaka, ZM</span></div>
+    <h1>Mutale Chileshe<span class="cursor"></span></h1>
+    <p class="p"><span class="role">whoami</span></p>
+    <p>Full‑stack engineer. I build fintech and mobile‑money APIs that serve 200k+ Zambians. Previously @ a Lusaka payments startup.</p>
+    <p class="p"><span class="role">cat contact.txt</span></p>
+    <p><a href="#">github.com/mutale</a> · <a href="#">mutale@dev.zm</a> · <a href="#">resume.pdf</a></p>
+
+    <section>
+      <h2>// projects</h2>
+      <div class="proj"><b>kwacha-pay</b> — open‑source SDK for Airtel &amp; MTN mobile money<small>TypeScript · 1.2k ★</small></div>
+      <div class="proj"><b>bus-zm</b> — real‑time minibus routes for Lusaka commuters<small>React Native · Go</small></div>
+      <div class="proj"><b>ndalama</b> — SMS budgeting bot in Bemba &amp; Nyanja<small>Python · Twilio</small></div>
+    </section>
+
+    <section>
+      <h2>// stack</h2>
+      <div class="stack"><span>TypeScript</span><span>Go</span><span>Postgres</span><span>React</span><span>Docker</span><span>AWS</span></div>
+    </section>
+
+    <section>
+      <h2>// experience</h2>
+<pre>2024 — now   Senior Engineer      Lusaka fintech
+2022 — 2024  Backend Engineer     Agritech startup
+2021         BSc Computer Science  UNZA</pre>
+    </section>
+    <p class="p" style="margin-top:56px"><span class="cursor"></span></p>
+  </div>
+</body>
+</html>

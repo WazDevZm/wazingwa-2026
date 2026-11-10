@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mwansa &amp; Associates — Legal Advisory | Kopala template by Kalulu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0b2545; --blue:#1d4ed8; --bg:#f7f9fc; --muted:#5b6b82; --line:#e3e9f2; --gold:#c99a2e; }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--navy); font-family:Manrope,sans-serif; line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+  nav { display:flex; align-items:center; justify-content:space-between; padding:22px 6vw; background:#fff; border-bottom:1px solid var(--line); }
+  .logo { font-weight:800; font-size:20px; display:flex; gap:10px; align-items:center; }
+  .logo i { width:30px; height:30px; border-radius:8px; background:var(--navy); display:grid; place-items:center; color:var(--gold); font-style:normal; font-size:15px; }
+  nav .links { display:flex; gap:28px; font-size:15px; color:var(--muted); }
+  .btn { display:inline-block; padding:13px 24px; border-radius:10px; background:var(--navy); color:#fff; font-weight:700; font-size:15px; transition:.25s; }
+  .btn:hover { background:var(--blue); transform:translateY(-2px); }
+  .btn.alt { background:#fff; color:var(--navy); border:1px solid var(--line); }
+  .hero { display:grid; grid-template-columns:1.2fr 1fr; gap:5vw; padding:10vh 6vw; align-items:center; }
+  .tag { display:inline-block; padding:6px 14px; border-radius:999px; background:#e8efff; color:var(--blue); font-size:13px; font-weight:700; }
+  h1 { font-size:clamp(40px,5vw,64px); line-height:1.05; letter-spacing:-.03em; margin:18px 0; font-weight:800; }
+  .hero p { font-size:19px; color:var(--muted); max-width:520px; }
+  .cta { display:flex; gap:12px; margin-top:28px; }
+  .portrait { aspect-ratio:4/5; border-radius:24px; background:linear-gradient(160deg,#1e3a6a,#0b2545); position:relative; box-shadow:0 40px 80px -30px rgba(11,37,69,.5); }
+  .portrait .card { position:absolute; left:-30px; bottom:40px; background:#fff; padding:16px 20px; border-radius:14px; box-shadow:0 20px 40px -10px rgba(0,0,0,.2); font-size:14px; }
+  .portrait .card b { display:block; font-size:24px; color:var(--blue); }
+  .services { padding:8vh 6vw; }
+  .services h2 { font-size:40px; letter-spacing:-.02em; margin:0 0 32px; }
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .c { background:#fff; border:1px solid var(--line); border-radius:18px; padding:28px; transition:.3s; }
+  .c:hover { transform:translateY(-6px); box-shadow:0 24px 50px -20px rgba(11,37,69,.25); border-color:#c9d6ea; }
+  .c .n { color:var(--gold); font-weight:800; }
+  .c h3 { margin:10px 0 8px; font-size:20px; } .c p { margin:0; color:var(--muted); }
+  .quote { margin:4vh 6vw 10vh; padding:48px; border-radius:24px; background:var(--navy); color:#fff; display:grid; grid-template-columns:2fr 1fr; gap:40px; align-items:center; }
+  .quote p { font-size:24px; line-height:1.5; margin:0; }
+  .quote .stats b { display:block; font-size:44px; color:var(--gold); }
+  @media (max-width:800px){ .hero,.quote { grid-template-columns:1fr; } .cards { grid-template-columns:1fr; } nav .links { display:none; } }
+</style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="#"><i>M</i>Mwansa &amp; Associates</a>
+    <div class="links"><a href="#">Practice areas</a><a href="#">About</a><a href="#">Insights</a></div>
+    <a class="btn" href="#">Book consultation</a>
+  </nav>
+  <section class="hero">
+    <div>
+      <span class="tag">Corporate &amp; Commercial Law · Kitwe</span>
+      <h1>Clear legal advice for growing Zambian businesses.</h1>
+      <p>We help SMEs, mining suppliers and startups register, contract and grow — without the jargon or surprise fees.</p>
+      <div class="cta"><a class="btn" href="#">Free 20‑min consult</a><a class="btn alt" href="#">Our services</a></div>
+    </div>
+    <div class="portrait"><div class="card"><b>15+ years</b>advising Copperbelt businesses</div></div>
+  </section>
+  <section class="services">
+    <h2>How we help</h2>
+    <div class="cards">
+      <div class="c"><span class="n">01</span><h3>Company registration</h3><p>PACRA, ZRA and licensing handled end to end.</p></div>
+      <div class="c"><span class="n">02</span><h3>Contracts</h3><p>Supplier, employment and shareholder agreements that protect you.</p></div>
+      <div class="c"><span class="n">03</span><h3>Dispute resolution</h3><p>Negotiation and representation when things go wrong.</p></div>
+    </div>
+  </section>
+  <section class="quote">
+    <p>“Mwansa &amp; Associates turned a three‑month registration nightmare into a two‑week process.”<br><small style="opacity:.6;font-size:15px">— Founder, Kitwe logistics company</small></p>
+    <div class="stats"><b>300+</b>clients served</div>
+  </section>
+</body>
+</html>
